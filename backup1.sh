@@ -25,8 +25,8 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ ! -d $sourcedirectory ]  then
- echo "this source directory $sourcedirectory is not exist"
- exit 1
+   echo "this source directory $sourcedirectory is not exist"
+   exit 1
 fi 
 
 if [ ! -d $destinationdirectory ]  then
