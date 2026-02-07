@@ -17,6 +17,7 @@ mkdir -p $log_folder
 
 usage(){
     echo "user inputs is mandatory sourcedirectory and destination directory and +14 days"
+    exit 1
 }
 
 if [ $# -lt 2 ]; then
@@ -25,11 +26,10 @@ fi
 
 if [ ! -d $sourcedirectory ]  then
  echo "this source directory $sourcedirectory is not exist"
+ exit 1
 fi 
+
 if [ ! -d $destinationdirectory ]  then
- echo "this destination directory $destinationdirectory is not exist"
-fi 
- # findfile=$(find $sourcedirectory -name "*.log" -type f -mtime $numberofdays)
-
-
-
+    echo "this destination directory $destinationdirectory is not exist"
+    exit
+fi
