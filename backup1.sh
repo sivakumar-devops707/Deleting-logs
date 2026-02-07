@@ -44,4 +44,28 @@ log "sorce directory : $sourcedirectory"
 log "destination directory: $destinationdirectory"
 log "days: $numberofdays"
 
+if [ -z $findfiles ]; then
+
+    log "no files to archive....Skipping"
+    exit 1
+else
+    log "files find  to archive....$findfiles"
+
+    timestampt=$(date "+%F %h-%m-%s")
+    zip_file_name="$destinationdirectory/app.logs-$timestampt.tar.gz"
+    find $sourcedirectory -name "*.log" -type f -mtime $numberofdays | tar -zcvf $zip_file_name
+
+  if [ -f $zip_file_name]; then
+      log "archiving is success.."
+        while IFS= read -r filepath; do
+         log "Deleting file: $filepath"
+         rm -f "$file"
+         log "deleted the file: $filepath "
+        done <<< $findfiles
+
+    else
+      log "archiving is failure.."
+      exit 1
+   if    
+fi
 
