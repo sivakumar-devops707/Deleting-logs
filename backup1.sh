@@ -1,8 +1,8 @@
 #!/bin/bash
 
 user=$(id -u)
-log_folder="/var/log/fend-logs"
-log_file="/var/log/fend-logs/$0.log"
+log_folder="/var/log/backup-logs"
+log_file="/var/log/backup-logs/$0.log"
 SCRIPT_DIR=$PWD
 sourcedirectory=$1
 destinationdirectory=$2
@@ -15,6 +15,10 @@ if [ $user -ne 0 ]; then
 fi
 mkdir -p $log_folder
 
+
+log(){
+    echo "$(date "+%y %m %d %h %m %s") | $1" |tee -a $log_file
+}
 usage(){
     echo "user inputs is mandatory sourcedirectory and destination directory and +14 days"
     exit 1
@@ -33,3 +37,11 @@ if [ ! -d $destinationdirectory ];  then
     echo "this destination directory $destinationdirectory is not exist"
     exit 1
 fi
+findfiles=$(find $sourcedirectory -name "*.log" -type f -mtime $numberofdays)
+
+log "backup started.."
+log "sorce directory : $sourcedirectory"
+log "destination directory: $destinationdirectory"
+log "days: $numberofdays"
+
+
