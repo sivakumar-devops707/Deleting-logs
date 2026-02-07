@@ -55,7 +55,7 @@ else
     zip_file_name="$destinationdirectory/app.logs-$timestampt.tar.gz"
     find $sourcedirectory -name "*.log" -type f -mtime $numberofdays | tar -zcvf $zip_file_name
 
-  if [ -f $zip_file_name]; then
+   if [ -f $zip_file_name]; then
       log "archiving is success.."
         while IFS= read -r filepath; do
          log "Deleting file: $filepath"
@@ -66,6 +66,6 @@ else
     else
       log "archiving is failure.."
       exit 1
-   if    
+    if    
 fi
 
