@@ -6,7 +6,7 @@ log_file="/var/log/fend-logs/$0.log"
 SCRIPT_DIR=$PWD
 sourcedirectory=$1
 destinationdirectory=$2
-numberofdays=$(3:-14)
+numberofdays=${3:-14}
 
 if [ $user -ne 0 ]; then
     echo "please run as sudo user / root user"
