@@ -56,7 +56,7 @@ else
     find $sourcedirectory -name "*.log" -type f -mtime $numberofdays | tar -zcvf $zip_file_name
 
    if [ -f $zip_file_name]; then
-      log "archiving is success.."
+        log "archiving is success.."
         while IFS= read -r filepath; do
          log "Deleting file: $filepath"
          rm -f "$file"
@@ -64,8 +64,8 @@ else
         done <<< $findfiles
 
     else
-      log "archiving is failure.."
-      exit 1
+        log "archiving is failure.."
+        exit 1
     if    
 fi
 
