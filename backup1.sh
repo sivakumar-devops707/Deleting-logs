@@ -24,12 +24,12 @@ if [ $# -lt 2 ]; then
    usage
 fi
 
-if [ ! -d $sourcedirectory ]  then
+if [ ! -d $sourcedirectory ];  then
    echo "this source directory $sourcedirectory is not exist"
    exit 1
 fi 
 
-if [ ! -d $destinationdirectory ]  then
+if [ ! -d $destinationdirectory ];  then
     echo "this destination directory $destinationdirectory is not exist"
     exit 1
 fi
