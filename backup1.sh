@@ -44,7 +44,7 @@ log "sorce directory : $sourcedirectory"
 log "destination directory: $destinationdirectory"
 log "days: $numberofdays"
 
-if [ -z $findfiles ]; then
+if [ -z "${findfiles}" ]; then
 
     log "no files to archive....Skipping"
     exit 1
