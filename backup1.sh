@@ -51,7 +51,7 @@ if [ -z "${findfiles}" ]; then
 else
     log "files find  to archive....$findfiles"
 
-    timestampt=$(date "+%F %h-%m-%s")
+    timestampt=$(date "+%F-%h-%m-%s")
     zip_file_name="$destinationdirectory/app.logs-$timestampt.tar.gz"
     echo "archive name : $zip_file_name"
     tar -zcvf $zip_file_name $(find $sourcedirectory -name "*.log" -type f -mtime +$numberofdays)
