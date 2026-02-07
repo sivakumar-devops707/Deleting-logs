@@ -2,7 +2,7 @@
 
 user=$(id -u)
 log_folder="/var/log/backup-logs"
-log_file="/var/log/backup-logs/$0.log"
+log_file="/var/log/backup-logs/backup.sh.log"
 SCRIPT_DIR=$PWD
 sourcedirectory=$1
 destinationdirectory=$2
