@@ -66,6 +66,6 @@ else
     else
         log "archiving is failure.."
         exit 1
-    if    
+    fi    
 fi
 
