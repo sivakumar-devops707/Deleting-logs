@@ -54,7 +54,7 @@ else
     timestampt=$(date "+%F %h-%m-%s")
     zip_file_name="$destinationdirectory/app.logs-$timestampt.tar.gz"
     echo "archive name : $zip_file_name"
-    find $sourcedirectory -name "*.log" -type f -mtime +$numberofdays | tar -zcvf $zip_file_name
+    tar -zcvf $zip_file_name $(find $sourcedirectory -name "*.log" -type f -mtime +$numberofdays)
 
    if [ -f $zip_file_name ]; then
         log "archiving is success.."
