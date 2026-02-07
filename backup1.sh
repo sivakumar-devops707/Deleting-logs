@@ -31,5 +31,5 @@ fi
 
 if [ ! -d $destinationdirectory ]  then
     echo "this destination directory $destinationdirectory is not exist"
-    exit
+    exit 1
 fi
