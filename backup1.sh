@@ -37,7 +37,7 @@ if [ ! -d $destinationdirectory ];  then
     echo "this destination directory $destinationdirectory is not exist"
     exit 1
 fi
-findfiles=$(find $sourcedirectory -name "*.log" -type f -mtime $numberofdays)
+findfiles=$(find $sourcedirectory -name "*.log" -type f -mtime +$numberofdays)
 
 log "backup started.."
 log "sorce directory : $sourcedirectory"
